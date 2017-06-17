@@ -42,6 +42,7 @@ GEM
       activerecord (>= 3.0)
     arel (8.0.0)
     awesome_print (1.8.0)
+    bcrypt (3.1.11)
     builder (3.2.3)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
@@ -164,6 +165,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   awesome_print
+  bcrypt
   database_cleaner
   dotenv-rails
   factory_girl_rails (~> 4.0)

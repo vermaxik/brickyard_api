@@ -11,6 +11,7 @@ gem 'puma', '~> 3.7'
 gem 'rack-cors'
 
 gem 'acts_as_list'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
