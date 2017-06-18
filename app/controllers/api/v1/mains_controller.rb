@@ -1,5 +1,5 @@
 class Api::V1::MainsController < ApplicationController
-  before_action :set_api_v1_main, only: [:show, :update, :destroy]
+  before_action :set_api_v1_main, only: [:show, :update, :position, :destroy]
 
   # GET /api/v1/mains
   def index
@@ -18,7 +18,7 @@ class Api::V1::MainsController < ApplicationController
     @api_v1_main = Main.new(api_v1_main_params)
 
     if @api_v1_main.save
-      render json: @api_v1_main, status: :created#, location: @api_v1_main
+      render json: @api_v1_main, status: :created, location: [:api, :v1, @api_v1_main]
     else
       render json: @api_v1_main.errors, status: :unprocessable_entity
     end
@@ -27,6 +27,15 @@ class Api::V1::MainsController < ApplicationController
   # PATCH/PUT /api/v1/mains/1
   def update
     if @api_v1_main.update(api_v1_main_params)
+      render json: @api_v1_main
+    else
+      render json: @api_v1_main.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PUT /api/v1/mains/1/position
+  def position
+    if @api_v1_main.insert_at(params[:position])
       render json: @api_v1_main
     else
       render json: @api_v1_main.errors, status: :unprocessable_entity
