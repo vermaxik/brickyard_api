@@ -12,6 +12,7 @@ gem 'rack-cors'
 
 gem 'acts_as_list'
 gem 'bcrypt'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
