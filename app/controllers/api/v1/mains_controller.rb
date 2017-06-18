@@ -1,16 +1,11 @@
 class Api::V1::MainsController < ApplicationController
-  before_action :set_api_v1_main, only: [:show, :update, :position, :destroy]
+  before_action :set_api_v1_main, only: [:update, :position, :destroy]
 
   # GET /api/v1/mains
   def index
     @api_v1_mains = Main.all
 
     render json: @api_v1_mains
-  end
-
-  # GET /api/v1/mains/1
-  def show
-    render json: @api_v1_main
   end
 
   # POST /api/v1/mains
@@ -20,7 +15,7 @@ class Api::V1::MainsController < ApplicationController
     if @api_v1_main.save
       render json: @api_v1_main, status: :created, location: [:api, :v1, @api_v1_main]
     else
-      render json: @api_v1_main.errors, status: :unprocessable_entity
+      render json: @api_v1_main.errors.full_messages, status: :unprocessable_entity
     end
   end
 
