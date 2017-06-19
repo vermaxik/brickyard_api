@@ -4,6 +4,9 @@ Rails.application.routes.draw do
       resources :mains do
         put :position, on: :member
       end
+
+      post :authenticate, to: 'sessions#create'
+      get  'authenticate/:token_id', to: 'sessions#user_by_token'
     end
   end
 end
