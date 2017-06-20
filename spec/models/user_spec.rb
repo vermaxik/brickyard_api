@@ -12,4 +12,5 @@ RSpec.describe User, type: :model do
     should define_enum_for(:role).
       with([:user, :admin])
   end
+
 end

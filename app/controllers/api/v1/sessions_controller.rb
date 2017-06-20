@@ -6,7 +6,7 @@ class Api::V1::SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       render json: user
     else
-      render json: 'error', status: :unprocessable_entity
+      render json: {message: 'Please check credentials.'}, status: :unprocessable_entity
     end
   end
 
@@ -16,7 +16,7 @@ class Api::V1::SessionsController < ApplicationController
     if user
       render json: user
     else
-      render json: 'error', status: :unprocessable_entity
+      render json: {message: 'Sorry, token is not valid.'}, status: :unprocessable_entity
     end
   end
 
