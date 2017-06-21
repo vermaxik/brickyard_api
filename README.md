@@ -1,24 +1,23 @@
-# README
+# Back-end API for Brickyard App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is Rails JSON API for https://github.com/vermaxik/brickyard-app.
 
-Things you may want to cover:
+## Initial Setup App
+`bundle install` in app root for install all gems.
 
-* Ruby version
+Rename `.env.example` -> `.env` and set your db settings.
 
-* System dependencies
+Run `rails db:setup` to setup databases.
 
-* Configuration
+`rails db:migrate` to run migrations.
 
-* Database creation
+and run seeds data `rails db:seed`.
 
-* Database initialization
+## Run Application
 
-* How to run the test suite
+`rails s` for run application on 3000 port.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Test
+For run a rspec tests use `rspec` command in app root.
 
-* Deployment instructions
 
-* ...
