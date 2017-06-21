@@ -4,9 +4,11 @@ class User < ApplicationRecord
 
   enum role: [:user, :admin]
 
-  validates :login, :password, presence: true
+  validates :login, presence: true
   validates :login, uniqueness: true
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  validates :password,  confirmation: true, on: :create
+  validates :password_confirmation, :password, presence: true, on: :create
+
+  belongs_to :main
 
 end

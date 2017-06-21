@@ -4,4 +4,6 @@ class Main < ApplicationRecord
   default_scope -> { order(position: :asc) }
 
   validates :state, presence: true
+
+  has_many :users
 end

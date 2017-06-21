@@ -48,6 +48,11 @@ RSpec.describe "Api::V1::Sessions", type: :request do
         expect(json['login']).to eq(user.login)
       end
 
+      it 'return a user with a  state' do
+        expect(json['main']).not_to be_empty
+        expect(json['main']['id']).to eq(user.main_id)
+      end
+
       it 'returns status code 200' do
         expect(response).to be_success
       end

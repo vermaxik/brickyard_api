@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
       post :authenticate, to: 'sessions#create'
       get  'authenticate/:token_id', to: 'sessions#user_by_token'
+
+      put :state, to: 'users#change_state'
     end
   end
 end

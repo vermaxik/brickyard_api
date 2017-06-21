@@ -5,5 +5,10 @@ FactoryGirl.define do
     password_confirmation { password }
     role { :user }
     token { Faker::Internet.password(24) }
+    main { build(:main) }
+
+    trait :with_position do
+      main { build(:main, position: 1) }
+    end
   end
 end
